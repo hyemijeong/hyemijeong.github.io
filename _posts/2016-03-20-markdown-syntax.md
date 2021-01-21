@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Javis Dron : "
-date:   2016-03-15
+date:   2021-01-21
 excerpt: "각각의 부품에 맞는 센서 결정하기"
 tag:
 - markdown 
