@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Syntax Highlighting
-date: 2013-08-16
-excerpt: "Demo post displaying the various ways of highlighting code in Markdown."
+title: 부품사양결정
+date: 2021.01.21
+excerpt: "각각의 사양에 일치하는 부품결정"
 tags: [sample post, code, highlighting]
 comments: true
 ---
