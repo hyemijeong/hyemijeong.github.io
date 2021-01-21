@@ -4,7 +4,7 @@ bio:                'Welcom to my homepage'
 description:        "My homepage contains the contents of my activities."
 reading_time:       true
 words_per_minute:   200
-logo:               'assets/img/'
+logo:               'assets/img/gpal6072'
 background:         'assets/img/배경.jpg' 
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
