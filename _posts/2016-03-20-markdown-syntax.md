@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Markdown Syntax"
+title:  "Javis Dron : "
 date:   2016-03-15
-excerpt: "Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more."
+excerpt: "각각의 부품에 맞는 센서 결정하기"
 tag:
 - markdown 
 - syntax
