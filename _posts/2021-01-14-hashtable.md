@@ -45,6 +45,10 @@ hashtable에서의 삽입과 삭제 검색 등은 모두 key의 값을 이용하
 **chaining**
 
 -아래의 그림과 같이 충돌되는 데이터들을 다른 메모리에 할당하여 linked list처럼 연결해주는 방식이다.
+
+
+
+
 <img src="/assets/img/hashtable.png" alt="linked list"></img>
 
 
