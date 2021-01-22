@@ -103,7 +103,7 @@ void insertSort(struct Node *head)
 
 
 ```c
-void searchNode(struct Node *head, int value)
+void *searchNode(struct Node *head, int value)
 {
      struct Node * curr;
      curr = head;
@@ -227,7 +227,6 @@ struct Node {
     struct Node * next;
 };
 
-//메모리를 할당하여 입력한 value값을 저장한 노드를 만든다.
 struct Node * createNode(int value)
 {
     struct Node * newNode;
@@ -238,7 +237,7 @@ struct Node * createNode(int value)
 
     return newNode;
 }
-//다음노드에 새로 만든 노드를 연결한다
+
 void insertNext(struct Node *curr, int value)
 {
 
@@ -248,8 +247,7 @@ void insertNext(struct Node *curr, int value)
     newNode->next = curr->next;
     curr->next = newNode;
 }
-//정렬을 위해 head에 curr포인터를 지정하고 반복문이 실행되면서 curr이 모든 노드를 한번씩 지정하도록 한다. 이 때 curr의 다음 data가 현재 지정하고 있는 값보다 크면
-//다음 데이터를 p포인터로 지정하여 노드의 맨 앞으로 빼준다. 뺀 후에는 curr이 다시 맨앞의 노드를 지정하도록 하여 노드를 data 값이 작은 순 부터 정렬해준다.
+
 void insertSort(struct Node *head)
 {
     struct Node *curr,*p;
@@ -265,20 +263,17 @@ void insertSort(struct Node *head)
             p->next=head;
             head=p;
             curr=p;
-
         }
         else{
             curr=curr->next;
         }
-
     }
-
     printf("inserSort result:");
     printAll(head);
 
 }
 
-void searchNode(struct Node *head, int value){
+void *searchNode(struct Node *head, int value){
      struct Node * curr;
      curr = head;
      while (curr!= NULL) {
@@ -296,16 +291,13 @@ void delnode(struct Node *head, int value)
     curr=head;
 
     while(curr!=NULL){
-        //삭제할 노드가 첫 노드라면 head의 값을 다음 노드로 지정해준다.
         if(head->data==value){
             p=head;
             head=head->next;
             free(p);
             printf("'%d'is deleted in this list.\n",value);
-
             break;
         }
-
         else if(curr->next->data==value){
             p=curr->next;
             curr->next=curr->next->next;
@@ -317,12 +309,11 @@ void delnode(struct Node *head, int value)
             curr=curr->next;
         }
     }
-    //만얃 value와 같은 값의 data를 가지고 있는 노드가 없을 때 아래와 같이 출력한다.
     if(curr=NULL){
         printf("!no value that you find in this list!\n");
     }
 }
-//head포인터를 이용해 반복문으로 모든 노드를 지정하면서 노드의 data값을 모두 출력하게 한다.
+
 void printAll(struct Node * head)
 {
      while(head != NULL) {
@@ -372,4 +363,4 @@ int main()
 }
 ```
 
-<img src="/path/to/img.png" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="result of linked list"></img>
+<img src="/assets/img/likedlist 결과.png alt="result of linked list">
