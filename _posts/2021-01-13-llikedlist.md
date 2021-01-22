@@ -216,7 +216,14 @@ int main()
 
 }
 ```
-아래는 코드 전체와 결과이다. 코드안의 주석은 위의 설명과 겹치므로 무시해도된다.
+
+
+
+
+
+
+
+###전체코드
 
 ```c
 #include <stdio.h>
@@ -362,6 +369,6 @@ int main()
 
 }
 ```
-
+###
 <img src="/assets/img/likedlist 결과.png alt="result of linked list">
                                                                 
