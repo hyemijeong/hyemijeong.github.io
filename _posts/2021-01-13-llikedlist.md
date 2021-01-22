@@ -12,14 +12,14 @@ bigdata 연구실 선행학습으로 c언어를 이용하여 single linked list�
 **linked list**는 아래의 그림과 같이 데이터가 저장되어있는 단위메모리가 연결형태를 나타낸다.
 
 
-<img src="/path/to/img.png" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="linked list"></img>
+<img src="/assets/img/list1.png" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="linked list"></img>
 
 이 때 메모리를 연결하기 위해서 **포인터**를 사용하며 다음(next)을 나타내는 포인터가 다음 노드를 가리키게 되면서 메모리들을 연결하여 준다.
 
 **linked list 장점**
 -linked list는 삽입이 자유로워 생성 때 부터 메모리의 크기를 정하여 할당해주는 Array List와는 달리 추가적으로 메모리를 할당하여 삽입할 수 있다. 
 
-<img src="/path/to/img.png" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="linked, array list"></img>
+<img src="/assets/img/liked-array1.png" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="linked, array list"></img>
 
 이로인해 array list는 사용하지 않는 메모리까지도 이미 할당되어있는 상태이기 때문에 노드를 추가 할 때마다 메모리를 할당해주는 linked list가 메모리사용에 있어 더 효율적이다.      
 -데이터를 중간에 삽입, 삭제하는 경우에도 array list는 다른 data를 모두 이동시켜야 하지만 linked list는 포인터를 이용하여 연결이 가능하기 때문에 더 효율적이다.
