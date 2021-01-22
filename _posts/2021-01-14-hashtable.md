@@ -329,8 +329,10 @@ int main(int argc, const char * argv[]) {
 
 
 **전체코드**
+
 <pre>
 <code>
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
