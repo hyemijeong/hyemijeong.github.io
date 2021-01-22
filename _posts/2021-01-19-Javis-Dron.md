@@ -43,12 +43,12 @@ comments: true
 
 ### 아두이노 우노 (Arduino Uno)
 
- 
+ <img src="/assets/img/우노.PNG" alt="아두이노 우노">
 
 CPU속도: 16MHz
 
  
-
+```
 아날로그 핀 개수(In/Out) : 6/0
 
  
@@ -58,7 +58,7 @@ CPU속도: 16MHz
  
 
 EEPROM 용량 : 1
-
+```
  
 
 
@@ -72,8 +72,9 @@ EEPROM 용량 : 1
 
 ### 아두이노 마이크로 (Arduino Micro)
 
- 
 
+ <img src="/assets/img/마이크로.PNG" alt="마이크로"> 
+```
 CPU속도: 16MHz
 
  
@@ -87,7 +88,7 @@ CPU속도: 16MHz
  
 
 EEPROM 용량 : 1
-
+```
 
 
  
@@ -98,8 +99,9 @@ EEPROM 용량 : 1
 
 ### 아두이노 나노 (Arduino Nano)
 
- 
 
+ <img src="/assets/img/나노.PNG" alt="마이크로">  
+```
 CPU속도: 16MHz
 
  
@@ -113,7 +115,7 @@ CPU속도: 16MHz
  
 
 EEPROM 용량 : 0.5121
-
+```
  
 
  
@@ -207,7 +209,7 @@ FC와 ECS의 펌웨어가 호환되는가?
 * ESC와 모터 연결
 
  
-
+ <img src="/assets/img/모터연결.PNG" alt="모터연결"> 
 
 
 
