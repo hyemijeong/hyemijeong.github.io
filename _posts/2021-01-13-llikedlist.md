@@ -30,15 +30,16 @@ bigdata 연구실 선행학습으로 c언어를 이용하여 single linked list�
 **linked list 구현 코드**
 
 '''
+
 struct Node {
     int data;
     struct Node * next;
 };
-
 '''
 -data값과 다음을 가리킬 수 있는 포인터로 next포인터의 구성을 가진 노드를 정의해준다.
 
 '''
+
 struct Node * createNode(int value)
 {
     struct Node * newNode;
@@ -54,6 +55,7 @@ struct Node * createNode(int value)
 
 
 '''
+
 void insertNext(struct Node *curr, int value)
 {
 
@@ -67,6 +69,7 @@ void insertNext(struct Node *curr, int value)
 -노드 삽입을 위한 함수이다. 다음노드에 새로 만든 노드를 연결한다
 
 '''
+
 void insertSort(struct Node *head)
 {
     struct Node *curr,*p;
@@ -102,6 +105,7 @@ void insertSort(struct Node *head)
 
 
 '''
+
 {
      struct Node * curr;
      curr = head;
@@ -116,6 +120,7 @@ void insertSort(struct Node *head)
 -curr이 맨 처음 노드를 지정한 후 반복문으로 모든 노드를 한번씩 지정하게 되면서 value값과 같은 data값을 가진 노드를 지정하게 되면 그 노드를 return해준다.
 
 '''
+
 void delnode(struct Node *head, int value)
 {
     struct Node *curr, *p;
@@ -154,6 +159,7 @@ void delnode(struct Node *head, int value)
 이는 삭제할 노드의 전 노드와 다음 노드를 이어주기 위함이다.
 
 '''
+
 void printAll(struct Node * head)
 {
      while(head != NULL) {
