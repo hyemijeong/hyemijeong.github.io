@@ -384,7 +384,6 @@ char * deleteTable(struct Table * t, int key) {
 /*
 void insertSort(struct Table * t)
 {
-
     struct InfoNode *curr,*p,*head;
 
     for(int i=0; i<10; i++){
