@@ -1,6 +1,5 @@
 ---
-layout: post
-title: Javis Dron
-project: true
+layout: post-list
+title: C Programming
 comments: false
 ---
