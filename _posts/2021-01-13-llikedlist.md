@@ -30,7 +30,8 @@ bigdata 연구실 선행학습으로 c언어를 이용하여 single linked list�
 **linked list 구현 코드**
 
 <pre>
-<code>c
+<code>
+'''c
 struct Node {
     int data;
     struct Node * next;
@@ -53,6 +54,7 @@ struct Node * createNode(int value)
 }
 </code>
 </pre>
+'''
 -malloc함수는 메모리를 할당해주는 함수이다. 형식은 위의 코드와 같다. malloc 함수를 이용하여 메모리를 할당한 후 입력한 value값을 data에 저장한 노드를 만든다.
 
 
