@@ -81,9 +81,7 @@ struct Table {
 int hashFunc(int key) {
     return key % 10;
 }
-
 //hashFunction으로 0-9까지의 값으로 한정하여준다.
-
 void initTable(struct Table * t) {
     int i;
     for (i=0; i < MAX_TBL; i++) {
@@ -91,7 +89,6 @@ void initTable(struct Table * t) {
     (t->tbl[i]).next = NULL;
     }
 }
-
 //table의 값을 초기화해준다.
 ```
 
@@ -154,7 +151,6 @@ void insertTable(struct Table * t, int key) { //8
     int hKey = hashFunc(key);
     if (searchTable(t, key) != NULL) {
     printf("Error! duplicated keys!\n");
-
     }
     else {
         insertNext(&t->tbl[hKey], key);
@@ -181,21 +177,20 @@ char * deleteTable(struct Table * t, int key) {
                 if((node->key)==(t->tbl[hKey]).next->key){
                     t->tbl[hKey].next=node->next;
                 }
-//node는 tbl배열에서 next로 넘어가면서 인자로 받은 key값과 같은 값이 있으면 그 전의 노드와 그 다음의 노드를 연결하여 같은 key값을
-//가진 노드의 연결을 끊어 없애준다. 이때 첫번째 노드는 tbl[hkey]의 next이므로 이를 이용하여 첫번 째 노드인지를 찾고 연결을 끊어준다.
-
+//node는 tbl배열에서 next로 넘어가면서 인자로 받은 key값과 같은 값이 있으면 그 전의 
+//노드와 그 다음의 노드를 연결하여 같은 key값을 가진 노드의 연결을 끊어 없애준다. 
+//이때 첫번째 노드는 tbl[hkey]의 next이므로 이를 이용하여 첫번 째 노드인지를 찾고 연결을 끊어준다.
                 else{
                     while(curr->next!=node){
                         curr->next=node->next;
                         curr=curr->next;
                     }
                 }
-//key값이 같은 노드를 node포인터로 찾고 그 전 노드와 없앨 노드의 다음노드를 연결해주기 위해 그 전 노드를 curr포인터로 가리킨다. 
-//그 후 curr의 next를 없앨 노드의 다음노드로 연결해준다.
+//key값이 같은 노드를 node포인터로 찾고 그 전 노드와 없앨 노드의 다음노드를 연결해주기 위해 
+//그 전 노드를 curr포인터로 가리킨다. 그 후 curr의 next를 없앨 노드의 다음노드로 연결해준다.
                 node->next=NULL;
             }
             node=node->next;
-
         }
 }
 ```
@@ -208,35 +203,27 @@ char * deleteTable(struct Table * t, int key) {
 /*
 void insertSort(struct Table * t)
 {
-
     struct InfoNode *curr,*p,*head;
 
     for(int i=0; i<10; i++){
-
         head=t->tbl[i].next;
         curr=t->tbl[i].next;
         p=NULL;
         while(curr->next!=NULL){
-
             if(curr->key>curr->next->key){
                 p=curr->next;
                 curr->next=curr->next->next;
-
                 p->next=head;
                 head=p;
                 curr=p;
-
             }
             else{
                 curr=curr->next;
             }
         }
-
     }
-
     printf("inserSort result:");
     printAll(t);
-
 }
 */
 ```
@@ -248,7 +235,6 @@ void insertSort(struct Table * t)
 
 ```c
 void printAll(struct Table * t){
-
     for(int i=0; i<10; i++){
         struct InfoNode *node;
         node=(t->tbl[i]).next;
@@ -258,9 +244,7 @@ void printAll(struct Table * t){
             node=node->next;
         }
         printf("\n");
-
     }
-
 }
 
 ```
@@ -284,23 +268,15 @@ int main(int argc, const char * argv[]) {
     insertTable(&myTable, 9013);
     insertTable(&myTable, 9021);
     insertTable(&myTable, 9011);
-    insertTable(&myTable, 9024); 
-    
+    insertTable(&myTable, 9024);     
     //key값 입력
-
-    printAll(&myTable);
-    
+    printAll(&myTable);    
     //table의 모든 값 출력
-
     printf("--------------\n");
-
     deleteTable(&myTable,9002); //9002를 삭제
-    printAll(&myTable);
-    
+    printAll(&myTable); 
     //삭제가 잘 되었는지 보기위해 table의 모든 값 출력
-
     //insertSort(&myTable);
-
     return 0;
 }
 
@@ -341,7 +317,7 @@ void initTable(struct Table * t) {
 }
 char * searchTable(struct Table * t, int key) {
     int hKey = hashFunc(key);
-
+    
     if ((t->tbl[hKey]).key == key) {//2
         return (t->tbl[hKey]).key;
     }
@@ -378,7 +354,6 @@ void insertTable(struct Table * t, int key) { //8
     int hKey = hashFunc(key);
     if (searchTable(t, key) != NULL) {
     printf("Error! duplicated keys!\n");
-
     }
     else {
         insertNext(&t->tbl[hKey], key);
@@ -390,24 +365,20 @@ char * deleteTable(struct Table * t, int key) {
     struct InfoNode *head;
     struct InfoNode * node = (t->tbl[hKey]).next;
     struct InfoNode *curr = (t->tbl[hKey]).next;
-
         while(node != NULL) {
             if (node->key == key) {//4
                 if((node->key)==(t->tbl[hKey]).next->key){
                     t->tbl[hKey].next=node->next;
                 }
-
                 else{
                     while(curr->next!=node){
                         curr->next=node->next;
                         curr=curr->next;
                     }
                 }
-
                 node->next=NULL;
             }
             node=node->next;
-
         }
 }
 /*
@@ -417,31 +388,24 @@ void insertSort(struct Table * t)
     struct InfoNode *curr,*p,*head;
 
     for(int i=0; i<10; i++){
-
         head=t->tbl[i].next;
         curr=t->tbl[i].next;
         p=NULL;
         while(curr->next!=NULL){
-
             if(curr->key>curr->next->key){
                 p=curr->next;
                 curr->next=curr->next->next;
-
                 p->next=head;
                 head=p;
                 curr=p;
-
             }
             else{
                 curr=curr->next;
             }
         }
-
     }
-
     printf("inserSort result:");
     printAll(t);
-
 }
 */
 void printAll(struct Table * t){
@@ -455,9 +419,7 @@ void printAll(struct Table * t){
             node=node->next;
         }
         printf("\n");
-
     }
-
 }
 
 int main(int argc, const char * argv[]) {
@@ -473,15 +435,11 @@ int main(int argc, const char * argv[]) {
     insertTable(&myTable, 9021);
     insertTable(&myTable, 9011);
     insertTable(&myTable, 9024); //10
-
     printAll(&myTable);
-
     printf("--------------\n");
-
     deleteTable(&myTable,9002);
     printAll(&myTable);
     //insertSort(&myTable);
-
     return 0;
 }
 ```
