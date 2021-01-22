@@ -30,16 +30,15 @@ bigdata 연구실 선행학습으로 c언어를 이용하여 single linked list�
 **linked list 구현 코드**
 
 
-'''c
+```c
 struct Node {
     int data;
     struct Node * next;
 };
-
+```
 -data값과 다음을 가리킬 수 있는 포인터로 next포인터의 구성을 가진 노드를 정의해준다.
 
-<pre>
-<code>c
+```c
 struct Node * createNode(int value)
 {
     struct Node * newNode;
@@ -50,14 +49,12 @@ struct Node * createNode(int value)
 
     return newNode;
 }
-</code>
-</pre>
-'''
+```
+
 -malloc함수는 메모리를 할당해주는 함수이다. 형식은 위의 코드와 같다. malloc 함수를 이용하여 메모리를 할당한 후 입력한 value값을 data에 저장한 노드를 만든다.
 
 
-<pre>
-<code>c
+```c
 void insertNext(struct Node *curr, int value)
 {
 
@@ -67,12 +64,10 @@ void insertNext(struct Node *curr, int value)
     newNode->next = curr->next;
     curr->next = newNode;
 }
-</code>
-</pre>
+```
 -노드 삽입을 위한 함수이다. 다음노드에 새로 만든 노드를 연결한다
 
-<pre>
-<code>c
+```c
 void insertSort(struct Node *head)
 {
     struct Node *curr,*p;
@@ -102,14 +97,13 @@ void insertSort(struct Node *head)
 
 
 }
-</code>
-</pre>
+```
 -정렬을 위해 head에 curr포인터를 지정하고 반복문이 실행되면서 curr이 모든 노드를 한번씩 지정하도록 한다. 이 때 curr의 다음 data가 현재 지정하고 있는 값보다 크면
 -다음 데이터를 p포인터로 지정하여 노드의 맨 앞으로 빼준다. 뺀 후에는 curr이 다시 맨앞의 노드를 지정하도록 하여 노드를 data 값이 작은 순 부터 정렬해준다.
 
 
-<pre>
-<code>c
+```c
+void searchNode(struct Node *head, int value)
 {
      struct Node * curr;
      curr = head;
@@ -120,12 +114,10 @@ void insertSort(struct Node *head)
      }
      return NULL;
 }
-</code>
-</pre>
+```
 -curr이 맨 처음 노드를 지정한 후 반복문으로 모든 노드를 한번씩 지정하게 되면서 value값과 같은 data값을 가진 노드를 지정하게 되면 그 노드를 return해준다.
 
-<pre>
-<code>c
+```c
 void delnode(struct Node *head, int value)
 {
     struct Node *curr, *p;
@@ -159,13 +151,11 @@ void delnode(struct Node *head, int value)
         printf("!no value that you find in this list!\n");
     }
 }
-</code>
-</pre>
+```
 -curr이 맨 처음 노드를 지정한 후 반복문으로 모든 노드를 한번씩 지정하게 되면서 삭제 할 노드의 전 노드에 curr이 위치하도록 하고, 포인터 p를 삭제할 노드로 지정해준다.   
 이는 삭제할 노드의 전 노드와 다음 노드를 이어주기 위함이다.
 
-<pre>
-<code>c
+```c
 void printAll(struct Node * head)
 {
      while(head != NULL) {
@@ -174,12 +164,10 @@ void printAll(struct Node * head)
      }
      printf("NULL\n");
 }
-</code>
-</pre>
+```
 -head포인터를 이용해 반복문으로 모든 노드를 지정하면서 노드의 data값을 모두 출력하게 한다.
 
-<pre>
-<code>c
+```c
 int main()
 {
      struct Node *head, *temp, *curr;
@@ -227,13 +215,10 @@ int main()
 
 
 }
-</code>
-</pre>
-
+```
 아래는 코드 전체와 결과이다. 코드안의 주석은 위의 설명과 겹치므로 무시해도된다.
 
-<pre>
-<code>c
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -292,8 +277,8 @@ void insertSort(struct Node *head)
     printAll(head);
 
 }
-//curr이 맨 처음 노드를 지정한 후 반복문으로 모든 노드를 한번씩 지정하게 되면서 value값과 같은 data값을 가진 노드를 지정하게 되면 그 노드를 return해준다.
-vno{
+
+void searchNode(struct Node *head, int value){
      struct Node * curr;
      curr = head;
      while (curr!= NULL) {
@@ -303,8 +288,7 @@ vno{
      }
      return NULL;
 }
-//curr이 맨 처음 노드를 지정한 후 반복문으로 모든 노드를 한번씩 지정하게 되면서 삭제 할 노드의 전 노드에 curr이 위치하도록 하고, 포인터 p를 삭제할 노드로 지정해준다.
-//이는 삭제할 노드의 전 노드와 다음 노드를 이어주기 위함이다.
+
 void delnode(struct Node *head, int value)
 {
     struct Node *curr, *p;
@@ -386,7 +370,6 @@ int main()
 
 
 }
-</code>
-</pre>
+```
 
 <img src="/path/to/img.png" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="result of linked list"></img>
