@@ -45,10 +45,11 @@ comments: true
 
  <img src="/assets/img/우노.PNG" alt="아두이노 우노">
 
+```
 CPU속도: 16MHz
 
  
-```
+
 아날로그 핀 개수(In/Out) : 6/0
 
  
