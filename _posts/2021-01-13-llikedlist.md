@@ -370,5 +370,5 @@ int main()
 }
 ```
 ### 코드실행결과
-<img src="/assets/img/likedlist .png" alt="linked, array list">
+<img src="/assets/img/likedlist 결과.png" alt="결과">
                                                                 
