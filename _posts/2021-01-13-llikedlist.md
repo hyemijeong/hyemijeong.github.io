@@ -200,8 +200,8 @@ int main()
      curr->next = temp;
      curr = temp;
      
-     //새로만든 노드를 temp가 가리키도록 한다. 처음 만든 노드는 head포인터가 가리키게 하고 미리 만들어져 있는 list의 마지막을 curr포인터가 가리키게 하여 temp가 가리키는 새로 만들어
-     //진 노드를 curr->next 가 되도록 하여 새로만든 노드와 기존의 list를 연결하여 준다.
+     //새로만든 노드를 temp가 가리키도록 한다. 처음 만든 노드는 head포인터가 가리키게 하고 미리 만들어져 있는 list의 마지막을 curr포인터가 
+     //가리키게 하여 temp가 가리키는 새로 만들진 노드를 curr->next 가 되도록 하여 새로만든 노드와 기존의 list를 연결하여 준다.
 
      temp = searchNode(head, 5);
      insertNext(temp, 9);
