@@ -20,8 +20,9 @@ void hashFunc (int key){
     int hash = key%10; //key값을 10으로 나눈 나머지
     return hasy;
 }
-</pre>
 </code>
+</pre>
+
 
 key값이 211,301,121, 이라면 이 key값에 대한 hash값은 모두 1이 될것이다.
 
@@ -72,8 +73,9 @@ struct InfoNode {
 struct Table {
     struct InfoNode tbl[MAX_TBL];
 };
-</pre>
 </code>
+</pre>
+
  -node와 table을 정의해준다. 이 때 table은 hash를 저장할 배열로 정의하였다.
 
 
@@ -95,8 +97,9 @@ void initTable(struct Table * t) {
 
 //table의 값을 초기화해준다.
 
-</pre>
 </code>
+</pre>
+
 
  -무한한 key의 값을 0-9까지의 값으로 한정시켜주는 hashFunction 함수를 만들어준다. 그리고 0-9의 hash의 값을 저장할 table을 모두 초기화 시켜준다.
 
@@ -121,8 +124,9 @@ char * searchTable(struct Table * t, int key) {
  }
     return NULL; //5
 }
-</pre>
 </code>
+</pre>
+
 
  -key의 값을 이용해서 같은 key를 가진 노드를 찾아주는 함수이다. 먼저 key에 대한 hash를 찾아준 뒤     
 node포인터를 이용해 연결된 노드를 모두 지나면서 같은 key를 가진 노드를 return 한다.
@@ -147,8 +151,9 @@ void insertNext(struct InfoNode *curr, int key) { //7
     newNode->next = curr->next;
     curr->next = newNode;
 }
-</pre>
 </code>
+</pre>
+
 
  -key값을 저장한 노드를 만드는 함수
  -다음노드에 연결
@@ -169,8 +174,9 @@ void insertTable(struct Table * t, int key) { //8
         insertNext(&t->tbl[hKey], key);
     }
 }
-</pre>
 </code>
+</pre>
+
 -key값에 대한 hash를 찾아 배열에 저장하는 함수. 
 -이 때 insertNext함수를 사용하여 해쉬충돌이 일어나지 않도록 같은 index의 배열에 데이터가 존재할 때 다음노드로 연결하여 linked list를 구현하여준다.
 -만약 같은 key를 가진 값이 있으면 에러 메세지를 출력한다.
@@ -208,9 +214,9 @@ char * deleteTable(struct Table * t, int key) {
 
         }
 }
-
-</pre>
 </code>
+</pre>
+
 
  -노드 삭제 함수.
 
@@ -253,8 +259,9 @@ void insertSort(struct Table * t)
 }
 */
 
-</pre>
 </code>
+</pre>
+
 
  -값을 오름차순으로 정렬해주는 함수, key값에 대한 hash를 찾은 후 이에 대응하는 배열의 linked list에서 이전에 사용했던 정렬 함수를 응요하여보았으나    
 실행이 되지 않았다. 차차 수정할 계획.
@@ -277,8 +284,10 @@ void printAll(struct Table * t){
     }
 
 }
-</pre>
+
 </code>
+</pre>
+
 
  -linked list와는 달리 table 배열에 연결되어있는 모든 노드를 출력해야하므로 배열을 도는 반복문 하나 연결된 linked list를 도는 반복문 하나, 총 두개의 반복문을 
 사용하여 모든 노드를 출력하게 하였다.
@@ -321,9 +330,9 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
-
-</pre>
 </code>
+</pre>
+
 
 
 
@@ -504,8 +513,9 @@ int main(int argc, const char * argv[]) {
 
     return 0;
 }
-</pre>
 </code>
+</pre>
+
 
 
 정렬부분에 오류가 있어서 아쉽다.. 다음에 수정하면서 안되었던 이유도 같이 업로드 할 예정 !
