@@ -43,7 +43,7 @@ comments: true
 
 ### 아두이노 우노 (Arduino Uno)
 
- <img src="/assets/img/우노.PNG" alt="아두이노 우노">
+ <img src="/assets/img/우노.png" alt="아두이노 우노">
 
 ```
 
@@ -75,7 +75,7 @@ EEPROM 용량 : 1
 ### 아두이노 마이크로 (Arduino Micro)
 
 
- <img src="/assets/img/마이크로.PNG" alt="마이크로"> 
+ <img src="/assets/img/마이크로.png" alt="마이크로"> 
  
 ```
 
@@ -104,7 +104,7 @@ EEPROM 용량 : 1
 ### 아두이노 나노 (Arduino Nano)
 
 
- <img src="/assets/img/나노.PNG" alt="마이크로">  
+ <img src="/assets/img/나노.png" alt="마이크로">  
  
 ```
 
@@ -215,7 +215,7 @@ FC와 ECS의 펌웨어가 호환되는가?
 * ESC와 모터 연결
 
  
- <img src="/assets/img/모터연결.PNG" alt="모터연결"> 
+ <img src="/assets/img/모터연결.png" alt="모터연결"> 
 
 
 
