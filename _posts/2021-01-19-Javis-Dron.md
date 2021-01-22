@@ -46,6 +46,7 @@ comments: true
  <img src="/assets/img/우노.PNG" alt="아두이노 우노">
 
 ```
+
 CPU속도: 16MHz
 
  
@@ -75,7 +76,9 @@ EEPROM 용량 : 1
 
 
  <img src="/assets/img/마이크로.PNG" alt="마이크로"> 
+ 
 ```
+
 CPU속도: 16MHz
 
  
@@ -102,7 +105,9 @@ EEPROM 용량 : 1
 
 
  <img src="/assets/img/나노.PNG" alt="마이크로">  
+ 
 ```
+
 CPU속도: 16MHz
 
  
