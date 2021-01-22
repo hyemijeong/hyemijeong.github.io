@@ -22,6 +22,8 @@ void hashFunc (int key){
 }
 '''
 
+
+
 key값이 211,301,121, 이라면 이 key값에 대한 hash값은 모두 1이 될것이다.
 
 
