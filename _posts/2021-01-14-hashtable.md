@@ -486,8 +486,10 @@ int main(int argc, const char * argv[]) {
 }
 ```
 
-### 결과
+### 코드실행결과
 
+
+<img src="/assets/img/hashtable 결과.png" alt="linked list"></img>
 
 
 
