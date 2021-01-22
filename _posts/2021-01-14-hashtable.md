@@ -11,7 +11,7 @@ comments: true
 
 hashtable에서는 무한의 데이터를 key라고 하는데 hashFuction을 통해 key를 유한한 데이터(hash)로 바꾸어 저장하여준다. 
 
-예를 들어 아래와 같은 hash 가 0~9 까지의 유한한 데이터를 가질 수 있도록 짜여진 hashFuction 이라면
+예를 들어 아래와 같은 hash 가 0-9 까지의 유한한 데이터를 가질 수 있도록 짜여진 hashFuction 이라면
 
 
 <pre>
@@ -78,7 +78,7 @@ int hashFunc(int key) {
     return key % 10;
 }
 
-//hashFunction으로 0~9까지의 값으로 한정하여준다.
+//hashFunction으로 0-9까지의 값으로 한정하여준다.
 
 void initTable(struct Table * t) {
     int i;
