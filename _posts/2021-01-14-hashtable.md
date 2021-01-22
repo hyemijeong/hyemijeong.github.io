@@ -15,7 +15,6 @@ hashtable에서는 무한의 데이터를 key라고 하는데 hashFuction을 통
 
 
 '''
-
 void hashFunc (int key){
     int hash = key%10; //key값을 10으로 나눈 나머지
     return hasy;
