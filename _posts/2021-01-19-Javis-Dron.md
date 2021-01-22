@@ -46,18 +46,11 @@ comments: true
  <img src="/assets/img/우노.png" alt="아두이노 우노">
 
 ```
-
 CPU속도: 16MHz
-
- 
 
 아날로그 핀 개수(In/Out) : 6/0
 
- 
-
 디지털 핀 개수(IO/PWM) : 14/6 (디지털은 입출력 같은 핀 사용)
-
- 
 
 EEPROM 용량 : 1
 ```
@@ -78,18 +71,11 @@ EEPROM 용량 : 1
  <img src="/assets/img/마이크로.png" alt="마이크로"> 
  
 ```
-
 CPU속도: 16MHz
-
- 
 
 아날로그 핀 개수(In/Out) : 12/0
 
- 
-
 디지털 핀 개수(IO/PWM) : 20/7
-
- 
 
 EEPROM 용량 : 1
 ```
@@ -107,18 +93,11 @@ EEPROM 용량 : 1
  <img src="/assets/img/나노.png" alt="마이크로">  
  
 ```
-
-CPU속도: 16MHz
-
- 
+CPU속도: 16MH
 
 아날로그 핀 개수(In/Out) : 8/0
 
- 
-
 디지털 핀 개수(IO/PWM) : 14/6
-
- 
 
 EEPROM 용량 : 0.5121
 ```
