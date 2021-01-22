@@ -69,7 +69,7 @@ struct Table {
 };
 </pre>
 </code>
--node와 table을 정의해준다. 이 때 table은 hash를 저장할 배열로 정의하였다.
+ -node와 table을 정의해준다. 이 때 table은 hash를 저장할 배열로 정의하였다.
 
 
 <pre>
@@ -93,7 +93,7 @@ void initTable(struct Table * t) {
 </pre>
 </code>
 
--무한한 key의 값을 0~9까지의 값으로 한정시켜주는 hashFunction 함수를 만들어준다. 그리고 0~9의 hash의 값을 저장할 table을 모두 초기화 시켜준다.
+ -무한한 key의 값을 0-9까지의 값으로 한정시켜주는 hashFunction 함수를 만들어준다. 그리고 0-9의 hash의 값을 저장할 table을 모두 초기화 시켜준다.
 
 
 
@@ -119,7 +119,7 @@ char * searchTable(struct Table * t, int key) {
 </pre>
 </code>
 
--key의 값을 이용해서 같은 key를 가진 노드를 찾아주는 함수이다. 먼저 key에 대한 hash를 찾아준 뒤     
+ -key의 값을 이용해서 같은 key를 가진 노드를 찾아주는 함수이다. 먼저 key에 대한 hash를 찾아준 뒤     
 node포인터를 이용해 연결된 노드를 모두 지나면서 같은 key를 가진 노드를 return 한다.
 
 
@@ -145,9 +145,9 @@ void insertNext(struct InfoNode *curr, int key) { //7
 </pre>
 </code>
 
--key값을 저장한 노드를 만드는 함수
--다음노드에 연결
-(linked list와 같음)
+ -key값을 저장한 노드를 만드는 함수
+ -다음노드에 연결
+ (linked list와 같음)
 
 
 
@@ -186,7 +186,8 @@ char * deleteTable(struct Table * t, int key) {
                 if((node->key)==(t->tbl[hKey]).next->key){
                     t->tbl[hKey].next=node->next;
                 }
-//node는 tbl배열에서 next로 넘어가면서 인자로 받은 key값과 같은 값이 있으면 그 전의 노드와 그 다음의 노드를 연결하여 같은 key값을 가진 노드의 연결을 끊어 없애준다. 이때 첫번째 노드는 tbl[hkey]의 next이므로 이를 이용하여 첫번 째 노드인지를 찾고 연결을 끊어준다.
+//node는 tbl배열에서 next로 넘어가면서 인자로 받은 key값과 같은 값이 있으면 그 전의 노드와 그 다음의 노드를 연결하여 같은 key값을
+//가진 노드의 연결을 끊어 없애준다. 이때 첫번째 노드는 tbl[hkey]의 next이므로 이를 이용하여 첫번 째 노드인지를 찾고 연결을 끊어준다.
 
                 else{
                     while(curr->next!=node){
@@ -194,7 +195,8 @@ char * deleteTable(struct Table * t, int key) {
                         curr=curr->next;
                     }
                 }
-//key값이 같은 노드를 node포인터로 찾고 그 전 노드와 없앨 노드의 다음노드를 연결해주기 위해 그 전 노드를 curr포인터로 가리킨다. 그 후 curr의 next를 없앨 노드의 다음노드로 연결해준다.
+//key값이 같은 노드를 node포인터로 찾고 그 전 노드와 없앨 노드의 다음노드를 연결해주기 위해 그 전 노드를 curr포인터로 가리킨다. 
+//그 후 curr의 next를 없앨 노드의 다음노드로 연결해준다.
                 node->next=NULL;
             }
             node=node->next;
@@ -205,7 +207,7 @@ char * deleteTable(struct Table * t, int key) {
 </pre>
 </code>
 
--노드 삭제 함수.
+ -노드 삭제 함수.
 
 
 
@@ -249,7 +251,7 @@ void insertSort(struct Table * t)
 </pre>
 </code>
 
-- 값을 오름차순으로 정렬해주는 함수, key값에 대한 hash를 찾은 후 이에 대응하는 배열의 linked list에서 이전에 사용했던 정렬 함수를 응요하여보았으나    
+ -값을 오름차순으로 정렬해주는 함수, key값에 대한 hash를 찾은 후 이에 대응하는 배열의 linked list에서 이전에 사용했던 정렬 함수를 응요하여보았으나    
 실행이 되지 않았다. 차차 수정할 계획.
 
 
@@ -273,7 +275,7 @@ void printAll(struct Table * t){
 </pre>
 </code>
 
--linked list와는 달리 table 배열에 연결되어있는 모든 노드를 출력해야하므로 배열을 도는 반복문 하나 연결된 linked list를 도는 반복문 하나, 총 두개의 반복문을 
+ -linked list와는 달리 table 배열에 연결되어있는 모든 노드를 출력해야하므로 배열을 도는 반복문 하나 연결된 linked list를 도는 반복문 하나, 총 두개의 반복문을 
 사용하여 모든 노드를 출력하게 하였다.
 
 
