@@ -369,6 +369,6 @@ int main()
 
 }
 ```
-###결과
+### 결과
 <img src="/assets/img/likedlist .png" alt="linked, array list">
                                                                 
