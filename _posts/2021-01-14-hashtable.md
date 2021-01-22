@@ -13,15 +13,12 @@ hashtable에서는 무한의 데이터를 key라고 하는데 hashFuction을 통
 
 예를 들어 아래와 같은 hash 가 0-9 까지의 유한한 데이터를 가질 수 있도록 짜여진 hashFuction 이라면
 
-
-<pre>
-<code>
+```c
 void hashFunc (int key){
     int hash = key%10; //key값을 10으로 나눈 나머지
     return hasy;
 }
-</code>
-</pre>
+```
 
 
 key값이 211,301,121, 이라면 이 key값에 대한 hash값은 모두 1이 될것이다.
@@ -56,9 +53,11 @@ hashtable에서의 삽입과 삭제 검색 등은 모두 key의 값을 이용하
 
 
 
-**hashtable 코드분석 (linked list와 중복되는 부분에 대한 설명은 간략히하였다.)**
-<pre>
-<code>
+###hashtable 코드분석 (linked list와 중복되는 부분에 대한 설명은 간략히하였다.)
+
+
+
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -73,14 +72,12 @@ struct InfoNode {
 struct Table {
     struct InfoNode tbl[MAX_TBL];
 };
-</code>
-</pre>
+```
 
  -node와 table을 정의해준다. 이 때 table은 hash를 저장할 배열로 정의하였다.
 
 
-<pre>
-<code>
+```c
 int hashFunc(int key) {
     return key % 10;
 }
@@ -96,17 +93,13 @@ void initTable(struct Table * t) {
 }
 
 //table의 값을 초기화해준다.
-
-</code>
-</pre>
+```
 
 
  -무한한 key의 값을 0-9까지의 값으로 한정시켜주는 hashFunction 함수를 만들어준다. 그리고 0-9의 hash의 값을 저장할 table을 모두 초기화 시켜준다.
 
 
-
-<pre>
-<code>
+```c
 char * searchTable(struct Table * t, int key) {
     int hKey = hashFunc(key);
 
@@ -124,17 +117,14 @@ char * searchTable(struct Table * t, int key) {
  }
     return NULL; //5
 }
-</code>
-</pre>
+```
 
 
  -key의 값을 이용해서 같은 key를 가진 노드를 찾아주는 함수이다. 먼저 key에 대한 hash를 찾아준 뒤     
 node포인터를 이용해 연결된 노드를 모두 지나면서 같은 key를 가진 노드를 return 한다.
 
 
-
-<pre>
-<code>
+```c
 struct InfoNode * createNode(int key) { //6
     struct InfoNode * newNode;
 
@@ -151,9 +141,7 @@ void insertNext(struct InfoNode *curr, int key) { //7
     newNode->next = curr->next;
     curr->next = newNode;
 }
-</code>
-</pre>
-
+```
 
  -key값을 저장한 노드를 만드는 함수
  -다음노드에 연결
@@ -161,9 +149,7 @@ void insertNext(struct InfoNode *curr, int key) { //7
 
 
 
-
-<pre>
-<code>
+```c
 void insertTable(struct Table * t, int key) { //8
     int hKey = hashFunc(key);
     if (searchTable(t, key) != NULL) {
@@ -174,8 +160,7 @@ void insertTable(struct Table * t, int key) { //8
         insertNext(&t->tbl[hKey], key);
     }
 }
-</code>
-</pre>
+```
 
 -key값에 대한 hash를 찾아 배열에 저장하는 함수. 
 -이 때 insertNext함수를 사용하여 해쉬충돌이 일어나지 않도록 같은 index의 배열에 데이터가 존재할 때 다음노드로 연결하여 linked list를 구현하여준다.
@@ -183,8 +168,7 @@ void insertTable(struct Table * t, int key) { //8
 
 
 
-<pre>
-<code>
+```c
 char * deleteTable(struct Table * t, int key) {
 
     int hKey = hashFunc(key);
@@ -214,16 +198,13 @@ char * deleteTable(struct Table * t, int key) {
 
         }
 }
-</code>
-</pre>
+```c
 
 
  -노드 삭제 함수.
 
 
-
-<pre>
-<code>
+```c
 /*
 void insertSort(struct Table * t)
 {
@@ -258,17 +239,14 @@ void insertSort(struct Table * t)
 
 }
 */
-
-</code>
-</pre>
+```
 
 
  -값을 오름차순으로 정렬해주는 함수, key값에 대한 hash를 찾은 후 이에 대응하는 배열의 linked list에서 이전에 사용했던 정렬 함수를 응요하여보았으나    
 실행이 되지 않았다. 차차 수정할 계획.
 
 
-<pre>
-<code>
+```c
 void printAll(struct Table * t){
 
     for(int i=0; i<10; i++){
@@ -285,8 +263,7 @@ void printAll(struct Table * t){
 
 }
 
-</code>
-</pre>
+```
 
 
  -linked list와는 달리 table 배열에 연결되어있는 모든 노드를 출력해야하므로 배열을 도는 반복문 하나 연결된 linked list를 도는 반복문 하나, 총 두개의 반복문을 
@@ -294,10 +271,7 @@ void printAll(struct Table * t){
 
 
 
-
-
-<pre>
-<code>
+```c
 int main(int argc, const char * argv[]) {
     struct Table myTable;
     initTable(&myTable);
@@ -330,8 +304,7 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
-</code>
-</pre>
+```
 
 
 
@@ -339,9 +312,7 @@ int main(int argc, const char * argv[]) {
 
 **전체코드**
 
-<pre>
-<code>
-
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -416,7 +387,7 @@ void insertTable(struct Table * t, int key) { //8
 char * deleteTable(struct Table * t, int key) {
 
     int hKey = hashFunc(key);
-    struct InfoNode *head;//hashFunc함수를 이용하여 hkey값을 가져온다.
+    struct InfoNode *head;
     struct InfoNode * node = (t->tbl[hKey]).next;
     struct InfoNode *curr = (t->tbl[hKey]).next;
 
@@ -513,8 +484,11 @@ int main(int argc, const char * argv[]) {
 
     return 0;
 }
-</code>
-</pre>
+```
+
+### 결과
+
+
 
 
 
