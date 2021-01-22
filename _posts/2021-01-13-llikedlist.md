@@ -46,7 +46,6 @@ struct Node * createNode(int value)
     newNode = (struct Node *) malloc(sizeof(struct Node));
     newNode->data = value;
     newNode->next = NULL;
-
     return newNode;
 }
 ```
@@ -57,7 +56,6 @@ struct Node * createNode(int value)
 ```c
 void insertNext(struct Node *curr, int value)
 {
-
     struct Node * newNode;
 
     newNode = createNode(value);
@@ -71,31 +69,22 @@ void insertNext(struct Node *curr, int value)
 void insertSort(struct Node *head)
 {
     struct Node *curr,*p;
-
     p=NULL;
     curr=head;
-
     while(curr->next!=NULL){
         if(curr->data>curr->next->data){
             p=curr->next;
             curr->next=curr->next->next;
-
             p->next=head;
             head=p;
             curr=p;
-
         }
         else{
             curr=curr->next;
         }
-
     }
-
     printf("inserSort result:");
     printAll(head);
-
-
-
 }
 ```
 -정렬을 위해 head에 curr포인터를 지정하고 반복문이 실행되면서 curr이 모든 노드를 한번씩 지정하도록 한다. 이 때 curr의 다음 data가 현재 지정하고 있는 값보다 크면
@@ -123,7 +112,6 @@ void delnode(struct Node *head, int value)
     struct Node *curr, *p;
     p=NULL;
     curr=head;
-
     while(curr!=NULL){
         //삭제할 노드가 첫 노드라면 head의 값을 다음 노드로 지정해준다.
         if(head->data==value){
@@ -131,10 +119,8 @@ void delnode(struct Node *head, int value)
             head=head->next;
             free(p);
             printf("'%d'is deleted in this list.\n",value);
-
             break;
         }
-
         else if(curr->next->data==value){
             p=curr->next;
             curr->next=curr->next->next;
@@ -171,8 +157,6 @@ void printAll(struct Node * head)
 int main()
 {
      struct Node *head, *temp, *curr;
-
-
      head = NULL;
      curr=NULL;
 
@@ -186,16 +170,12 @@ int main()
 
      temp = createNode(7);
      curr->next = temp;
-     curr = temp;
-     
+     curr = temp;     
      //새로만든 노드를 temp가 가리키도록 한다. 처음 만든 노드는 head포인터가 가리키게 하고 미리 만들어져 있는 list의 마지막을 curr포인터가 
      //가리키게 하여 temp가 가리키는 새로 만들진 노드를 curr->next 가 되도록 하여 새로만든 노드와 기존의 list를 연결하여 준다.
-
      temp = searchNode(head, 5);
-     insertNext(temp, 9);
-     
+     insertNext(temp, 9);  
      //temp가 5의 data를 가지고 있는 노드를 가리키게 하여 5다음에 9 data를 가진 노드를 삽입하여 준다.
-
      temp = createNode(2);
      curr->next = temp;
      curr = temp;
@@ -212,8 +192,6 @@ int main()
      //만들어진 list를 출력
      insertSort(head);
      //list를 오름차순으로 정렬한다.
-
-
 }
 ```
 
@@ -241,13 +219,11 @@ struct Node * createNode(int value)
     newNode = (struct Node *) malloc(sizeof(struct Node));
     newNode->data = value;
     newNode->next = NULL;
-
     return newNode;
 }
 
 void insertNext(struct Node *curr, int value)
 {
-
     struct Node * newNode;
 
     newNode = createNode(value);
@@ -261,12 +237,10 @@ void insertSort(struct Node *head)
 
     p=NULL;
     curr=head;
-
     while(curr->next!=NULL){
         if(curr->data>curr->next->data){
             p=curr->next;
             curr->next=curr->next->next;
-
             p->next=head;
             head=p;
             curr=p;
@@ -277,7 +251,6 @@ void insertSort(struct Node *head)
     }
     printf("inserSort result:");
     printAll(head);
-
 }
 
 void *searchNode(struct Node *head, int value){
@@ -296,7 +269,6 @@ void delnode(struct Node *head, int value)
     struct Node *curr, *p;
     p=NULL;
     curr=head;
-
     while(curr!=NULL){
         if(head->data==value){
             p=head;
@@ -333,8 +305,6 @@ void printAll(struct Node * head)
 int main()
 {
      struct Node *head, *temp, *curr;
-
-
      head = NULL;
      curr=NULL;
 
@@ -365,8 +335,6 @@ int main()
      delnode(head,5);
      printAll(head);
      insertSort(head);
-
-
 }
 ```
 ### 코드실행결과
