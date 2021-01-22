@@ -198,7 +198,7 @@ char * deleteTable(struct Table * t, int key) {
 
         }
 }
-```c
+```
 
 
  -노드 삭제 함수.
