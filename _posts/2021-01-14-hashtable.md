@@ -23,7 +23,6 @@ void hashFunc (int key){
 </pre>
 </code>
 
-
 key값이 211,301,121, 이라면 이 key값에 대한 hash값은 모두 1이 될것이다.
 
 
@@ -93,6 +92,7 @@ void initTable(struct Table * t) {
 
 </pre>
 </code>
+
 -무한한 key의 값을 0~9까지의 값으로 한정시켜주는 hashFunction 함수를 만들어준다. 그리고 0~9의 hash의 값을 저장할 table을 모두 초기화 시켜준다.
 
 
@@ -118,6 +118,7 @@ char * searchTable(struct Table * t, int key) {
 }
 </pre>
 </code>
+
 -key의 값을 이용해서 같은 key를 가진 노드를 찾아주는 함수이다. 먼저 key에 대한 hash를 찾아준 뒤     
 node포인터를 이용해 연결된 노드를 모두 지나면서 같은 key를 가진 노드를 return 한다.
 
@@ -143,6 +144,7 @@ void insertNext(struct InfoNode *curr, int key) { //7
 }
 </pre>
 </code>
+
 -key값을 저장한 노드를 만드는 함수
 -다음노드에 연결
 (linked list와 같음)
@@ -246,6 +248,7 @@ void insertSort(struct Table * t)
 
 </pre>
 </code>
+
 - 값을 오름차순으로 정렬해주는 함수, key값에 대한 hash를 찾은 후 이에 대응하는 배열의 linked list에서 이전에 사용했던 정렬 함수를 응요하여보았으나    
 실행이 되지 않았다. 차차 수정할 계획.
 
