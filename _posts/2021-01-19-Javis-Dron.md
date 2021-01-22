@@ -8,9 +8,9 @@ project: true
 comments: true
 ---
 
-## 1. Flight Controller : FC의 기능은 수신기의 신호를 받아 변속기 (ECS) 에 신호를 보내어 모터를 제어하는 것입니다.
+## 1. Flight Controller : FC의 기능은 수신기의 신호를 받아 변속기 (ECS) 에 신호를 보내어 모터를 제어하는 것입니다.<br><br>
 
-시중에 나와 있는 FC에는
+시중에 나와 있는 FC에는<br><br>
 
 - APM
 
@@ -20,13 +20,13 @@ comments: true
 
 - CC3D
 
-- Naze32
-
+- Naze32  
+<br>
 등이 있으며 FC 자체에 기압센서, 지자기 센서, GPS센서를 내장하여 출시 되어있습니다.
 
 그러나 센서 사용 방법을 익히고 확장성을 높이기 위하여 아두이노 보드를 이용하여 FC로 사용하기로 선택하였습니다.
 
-우선 주로 드론 FC로 사용되는 아두이노 보드의 종류를 살펴보겠습니다.
+우선 주로 드론 FC로 사용되는 아두이노 보드의 종류를 살펴보겠습니다.<br><br><br><br>
 
 
 
@@ -41,7 +41,7 @@ comments: true
 
  
 
-### 아두이노 우노 (Arduino Uno)
+### 아두이노 우노 (Arduino Uno)<br><br>
 
  <img src="/assets/img/우노.png" alt="아두이노 우노">
 
