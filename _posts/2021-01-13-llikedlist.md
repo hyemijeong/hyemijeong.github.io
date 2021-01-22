@@ -29,15 +29,13 @@ bigdata 연구실 선행학습으로 c언어를 이용하여 single linked list�
 
 **linked list 구현 코드**
 
-<pre>
-<code>
+
 '''c
 struct Node {
     int data;
     struct Node * next;
 };
-</code>
-</pre>
+
 -data값과 다음을 가리킬 수 있는 포인터로 next포인터의 구성을 가진 노드를 정의해준다.
 
 <pre>
